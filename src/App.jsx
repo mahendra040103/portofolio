@@ -10,31 +10,44 @@ export default function Portfolio() {
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({
-        x: (e.clientX - window.innerWidth / 2) / 25,
-        y: (e.clientY - window.innerHeight / 2) / 25,
+        x: (e.clientX - window.innerWidth / 2) / 30,
+        y: (e.clientY - window.innerHeight / 2) / 30,
       });
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  const experiences = [
+    {
+      title: "Web Content & Digital Media Specialist",
+      period: "Desember 2025 - Sekarang",
+      company: "Kantor Imigrasi Kelas II Non TPI Kediri",
+      responsibilities: [
+        "Mengelola dan mengembangkan website resmi menggunakan WordPress CMS",
+        "Membuat materi publikasi digital berupa infografis dan videografis menggunakan Canva & CapCut",
+        "Melakukan monitoring dan troubleshooting sistem hardware & software",
+        "Mengikuti pelatihan Essential Skills: Digital Literacy, Self Efficacy, Digital Transformation",
+        "Meningkatkan kualitas konten dan user experience website instansi"
+      ]
+    },
+    {
+      title: "Website Administrator & Content Manager",
+      period: "Februari 2024",
+      company: "Dinas Pendidikan Kabupaten Kediri",
+      responsibilities: [
+        "Mengelola dan memperbarui konten website resmi Dinas Pendidikan",
+        "Melakukan pemeliharaan server dan optimalisasi performa website",
+        "Meningkatkan aksesibilitas dan tampilan website untuk publik & internal",
+        "Memastikan kestabilan dan kecepatan akses website bagi pengguna"
+      ]
+    }
+  ];
+
   const skills = {
     hard: ['Python', 'HTML', 'CSS', 'JavaScript', 'PHP', 'SQL', 'WordPress', 'Networking', 'Microsoft Office', 'Canva', 'CapCut', 'Figma', 'Machine Learning'],
     soft: ['Disiplin', 'Bertanggung Jawab', 'Komunikatif', 'Cepat Beradaptasi', 'Problem Solving', 'Semangat Belajar Tinggi']
   };
-
-  const experiences = [
-    {
-      title: "Magang Hubdat - Kantor Imigrasi Kelas II Non TPI Kediri",
-      period: "Desember 2025 - Sekarang",
-      desc: "Mengelola website resmi WordPress, membuat konten digital (Canva & CapCut), monitoring sistem, dan mengikuti pelatihan Essential Skills.",
-    },
-    {
-      title: "Magang - Dinas Pendidikan Kabupaten Kediri",
-      period: "Februari 2024",
-      desc: "Mengelola dan memelihara website resmi, meningkatkan aksesibilitas, serta optimalisasi server dan tampilan website.",
-    }
-  ];
 
   const projects = [
     {
@@ -63,7 +76,6 @@ export default function Portfolio() {
             <span className="text-yellow-400">Mahendra</span>
           </h1>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex gap-8 text-sm font-medium">
             <a href="#about" className="hover:text-yellow-400 transition">About</a>
             <a href="#experience" className="hover:text-yellow-400 transition">Experience</a>
@@ -72,16 +84,14 @@ export default function Portfolio() {
             <a href="#contact" className="hover:text-yellow-400 transition">Contact</a>
           </div>
 
-          {/* Mobile Hamburger */}
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-2xl"
+            className="md:hidden text-3xl"
           >
             {isMenuOpen ? '✕' : '☰'}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden bg-[#0a0f1c] border-t border-white/10 py-6">
             <div className="flex flex-col items-center gap-6 text-lg">
@@ -100,7 +110,7 @@ export default function Portfolio() {
         )}
       </nav>
 
-      {/* Hero Section - 3D Floating Profile */}
+      {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
@@ -111,8 +121,10 @@ export default function Portfolio() {
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed max-w-lg">
-              Lulusan Teknik Informatika (IPK 3.80) dengan passion di <span className="text-yellow-400">Web Development, Editing</span>
-              , Graphic Design dan Networking.
+              Lulusan Teknik Informatika (IPK 3.80) dengan passion tinggi di bidang 
+              <span className="text-yellow-400"> Web Development</span>, 
+              <span className="text-yellow-400"> Machine Learning</span>, 
+              Graphic Design, dan Networking.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -141,7 +153,6 @@ export default function Portfolio() {
                   src="/profile.jpeg"
                   alt="Rizqi Maulana Mahendra"
                   className="w-full h-full object-cover object-[center_20%] scale-105 hover:scale-100 transition-transform duration-700"
-            
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
@@ -156,34 +167,61 @@ export default function Portfolio() {
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Profil Profesional</h2>
           <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
             Saya adalah lulusan S1 Teknik Informatika dari Universitas Nusantara PGRI Kediri. 
-            Memiliki kemampuan kuat di bidang web development, editing, networking, 
-            dan graphic design. Siap berkontribusi dengan disiplin, adaptasi cepat, dan semangat belajar tinggi.
+            Memiliki kemampuan kuat di bidang web development, machine learning, editing, 
+            graphic design, dan networking. Siap berkontribusi dengan disiplin, adaptasi cepat, 
+            dan semangat belajar yang tinggi.
           </p>
         </div>
       </section>
 
-      {/* Experience */}
-      <section id="experience" className="py-20 px-6">
+      {/* === EXPERIENCE - MODERN TIMELINE === */}
+      <section id="experience" className="py-20 px-6 bg-[#0a0f1c]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-yellow-400 tracking-widest font-semibold">EXPERIENCE</p>
+            <p className="text-yellow-400 tracking-widest font-semibold">PROFESSIONAL JOURNEY</p>
             <h2 className="text-4xl md:text-5xl font-bold mt-3">Pengalaman Magang</h2>
           </div>
 
-          <div className="space-y-10">
-            {experiences.map((exp, i) => (
-              <div key={i} className="group bg-[#1e293b] p-8 md:p-10 rounded-3xl border border-gray-700 hover:border-yellow-400/50 transition-all duration-500 hover:-translate-y-2">
-                <div className="flex flex-col md:flex-row justify-between gap-4">
-                  <h3 className="text-xl font-semibold text-yellow-400 group-hover:text-yellow-300 transition">{exp.title}</h3>
-                  <span className="text-sm text-gray-400 whitespace-nowrap">{exp.period}</span>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Timeline Line */}
+            <div className="absolute left-6 md:left-10 top-8 bottom-8 w-[3px] bg-gradient-to-b from-yellow-400 via-yellow-500 to-transparent"></div>
+
+            <div className="space-y-16">
+              {experiences.map((exp, i) => (
+                <div key={i} className="relative pl-16 md:pl-24 group">
+                  {/* Timeline Dot */}
+                  <div className="absolute left-4 md:left-8 w-5 h-5 rounded-full border-4 border-yellow-400 bg-[#0a0f1c] group-hover:scale-110 transition-transform duration-300"></div>
+
+                  <div className="bg-[#1e293b] rounded-3xl p-8 md:p-10 border border-gray-700 hover:border-yellow-400/50 transition-all duration-500 hover:-translate-y-2 shadow-xl">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                      <div>
+                        <h3 className="text-2xl font-bold text-yellow-400 group-hover:text-yellow-300 transition-colors">
+                          {exp.title}
+                        </h3>
+                        <p className="text-gray-400 mt-1">{exp.company}</p>
+                      </div>
+                      <span className="px-5 py-2 bg-yellow-400/10 text-yellow-400 text-sm font-medium rounded-full whitespace-nowrap">
+                        {exp.period}
+                      </span>
+                    </div>
+
+                    <ul className="space-y-4 text-gray-300">
+                      {exp.responsibilities.map((item, idx) => (
+                        <li key={idx} className="flex gap-3">
+                          <span className="text-yellow-400 mt-1.5 text-lg">▹</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <p className="mt-6 text-gray-300 leading-relaxed">{exp.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Skills, Projects, Contact, Footer tetap sama seperti sebelumnya */}
       {/* Skills */}
       <section id="skills" className="py-20 px-6 bg-[#111827]">
         <div className="max-w-6xl mx-auto">
@@ -234,7 +272,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Projects - 3D Cards */}
+      {/* Projects */}
       <section id="projects" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">

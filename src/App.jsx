@@ -20,19 +20,19 @@ export default function Portfolio() {
 
   const experiences = [
     {
-      title: "Web Content & Digital Media Specialist",
+      title: "Information Technology",
       period: "Desember 2025 - Sekarang",
       company: "Kantor Imigrasi Kelas II Non TPI Kediri",
       responsibilities: [
         "Mengelola dan mengembangkan website resmi menggunakan WordPress CMS",
         "Membuat materi publikasi digital berupa infografis dan videografis menggunakan Canva & CapCut",
         "Melakukan monitoring dan troubleshooting sistem hardware & software",
-        "Mengikuti pelatihan Essential Skills: Digital Literacy, Self Efficacy, Digital Transformation",
+        "Social Influence, Design Thinking, Digital Disruption & Transformation, Digital Literacy, Self Efficacy, serta Integrity at Work guna meningkatkan profesionalisme dan kualitas kinerja.",
         "Meningkatkan kualitas konten dan user experience website instansi"
       ]
     },
     {
-      title: "Website Administrator & Content Manager",
+      title: "Information Technology",
       period: "Februari 2024",
       company: "Dinas Pendidikan Kabupaten Kediri",
       responsibilities: [
@@ -259,7 +259,7 @@ export default function Portfolio() {
                 <div className="space-y-6">
                   <div>
                     <p className="font-semibold text-lg">Applied Microsoft Office</p>
-                    <p className="text-gray-400">Word, Excel, PowerPoint • 490</p>
+                    <p className="text-gray-400">Word, Excel, PowerPoint • 75</p>
                   </div>
                   <div>
                     <p className="font-semibold text-lg">TOEFL</p>
